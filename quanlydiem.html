@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+    <link rel="stylesheet" href="quanlydiem.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="top">
+        <!-- <marquee behavior="" direction="">Chào mừng thầy, cô đến với cổng quản lý sinh viên</marquee> -->
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-circle-user"></i>
+    </div>
+    <main>
+        <div class="menu-aside" id="menu-aside">
+            <div><a href="trangchu.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> <span
+                        class="hide-text">Trang chủ</span></a></div>
+            <div><a href="quanly.html" onclick="toggleMenu()"><i class="fa-solid fa-user"></i> <span
+                        class="hide-text">Quản lý sinh viên</span></a></div>
+            <div><a href="quanlydiem.html" onclick="toggleMenu()"><i class="fa-solid fa-window-restore"></i> <span
+                        class="hide-text">Quản lý điểm</span></a></div>
+            <div><a href="hocphan.html" onclick="toggleMenu()"><i class="fa-solid fa-book"></i> <span
+                        class="hide-text">Học
+                        phần</span></a></div>
+            <div><a href="tintuc.html" onclick="toggleMenu()"><i class="fa-solid fa-newspaper"></i> <span
+                        class="hide-text">Tin
+                        tức</span></a></div>
+            <div><a href="baocao.html" onclick="toggleMenu()"><i class="fa-regular fa-comment-dots"></i> <span
+                        class="hide-text">Báo cáo, góp ý</span></a></div>
+        </div>
+        <div class="main-right">
+            <div class="header-main">
+                <p><i class="fa-solid fa-window-restore"></i> Quản lý điểm thi</p>
+            </div>
+            <div class="form-change" hidden>
+                <h1>Thay đổi điểm</h1>
+                <div class="info">
+                    <div>
+                        <label for="" class="form-label-info">Mã sinh viên</label> <br>
+                        <input type="text" class="form-input-info" id="msv-input">
+                    </div>
+                    <div>
+                        <label for="" class="form-label-info">Họ và tên</label> <br>
+                        <input type="text" class="form-input-info" id="name-input">
+                    </div>
+                </div>
+                <div class="term">
+                    <p>Điểm kì 1</p>
+                    <div class="terms">
+                        <div>
+                            <label for="" class="form-label">Điểm thành phần</label> 
+                            <input type="text" class="form-input" id="term-1-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm giữa kì</label> 
+                            <input type="text" class="form-input" id="term-1-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm cuối kì</label> 
+                            <input type="text" class="form-input" id="term-1-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="term">
+                    <p>Điểm kì 2</p>
+                    <div class="terms">
+                        <div>
+                            <label for="" class="form-label">Điểm thành phần</label> 
+                            <input type="text" class="form-input" id="term-2-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm giữa kì</label> 
+                            <input type="text" class="form-input" id="term-2-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm cuối kì</label> 
+                            <input type="text" class="form-input" id="term-2-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="term">
+                    <p>Điểm kì 3</p>
+                    <div class="terms">
+                        <div>
+                            <label for="" class="form-label">Điểm thành phần</label> 
+                            <input type="text" class="form-input" id="term-3-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm giữa kì</label> 
+                            <input type="text" class="form-input" id="term-3-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm cuối kì</label> 
+                            <input type="text" class="form-input" id="term-3-3">
+                        </div>
+                    </div>
+                </div>
+                <button id="save" class="button-3">Lưu lại</button>
+                <button id="cancel" class="button-8">Hủy</button>
+            </div>
+            <div class="search">
+                <span>
+                    <select name="options" id="status-down" onchange="filterMember()">
+                        <option value="Tất cả" selected>Tất cả</option>
+                        <option value="1">Kì 1</option>
+                        <option value="2">Kì 2</option>
+                        <option value="3">Kì 3</option>
+                    </select>
+                </span>
+                <input type="search" name="" id="search" oninput="searchUser()" placeholder="Nhập tên cần tìm...">
+            </div>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã sinh viên</th>
+                    <th>Họ và tên</th>
+                    <th>Học kì</th>
+                    <th>Điểm thành phần</th>
+                    <th>Điểm giữa kì</th>
+                    <th>Điểm cuối kì</th>
+                    <th>Điểm trung bình</th>
+                    <th>Xếp loại</th>
+                    <th>Chức năng</th>
+                </tr>
+                <tbody id="groups"></tbody>
+            </table>
+        </div>
+        <div id="cover"></div>
+    <script src="quanlydiem.js"></script>
+</body>
+</html>

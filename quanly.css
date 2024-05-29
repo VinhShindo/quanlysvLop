@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top {
+    background-color: rgba(180, 180, 180, 0.295);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 10px;
+}
+
+.fa-bars {
+    cursor: pointer;
+    font-size: larger;
+}
+
+.fa-circle-user {
+    position: absolute;
+    font-size: 2em;
+    cursor: pointer;
+    right: 10px;
+    color: grey;
+}
+
+/* Phần chính */
+main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: calc(100vh - 50px);
+}
+
+.menu-aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #284e55;
+    padding: 10px 15px 10px 10px;
+}
+
+.menu-aside div {
+    padding: 15px 0;
+}
+
+.menu-aside div a {
+    color: #f1f4f2;
+    text-decoration: none;
+}
+
+.menu-aside div a:hover {
+    transition: box-shadow .3s, color .3s;
+    box-shadow: 0 3px white;
+}
+
+.hide-text {
+    display: none;
+}
+
+.main-right {
+    padding: 15px;
+    height: 100%;
+}
+
+/* cảnh báo */
+.init-alert {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    z-index: 100;
+}
+
+.close-fixed-alert {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    font-size: 1.2em;
+}
+
+.fixed-alert {
+    width: 300px;
+    position: fixed;
+    z-index: 999999999;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.alert-right-content {
+    padding: 10px;
+}
+
+.alert-right-content p {
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.fa-circle-xmark {
+    color: red;
+    margin-right: 5px;
+}
+
+.fa-circle-check {
+    color: green;
+    margin-right: 5px;
+}
+
+/* phần phủ lên khi hiện nhập và sửa */
+#cover {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    z-index: 9;
+    opacity: 0.5;
+}
+
+/* Bảng dilog xác nhận */
+dialog {
+    width: 250px;
+    padding: 10px;
+    top: 45%;
+    left: 45%;
+    border: 1px solid black;
+    z-index: 100;
+}
+
+dialog p {
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+dialog div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.bn49 {
+    border: 0;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    width: 80px;
+    color: #ffffff;
+    background-color: #36a2eb;
+    border-radius: 8px;
+    font-family: "proxima-nova-soft", sans-serif;
+    text-decoration: none;
+    transition: box-shadow 200ms ease-out;
+    cursor: pointer;
+
+}
+
+#cancel-dialog {
+    background-color: white;
+    color: #36a2eb;
+    border: 1px solid #36a2eb;
+}
+
+#confirm-dialog {
+    background-color: blue;
+}
+
+/* Form nhập */
+#form-add {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: fixed;
+    background-color: white;
+    top: 10%;
+    left: 38%;
+    z-index: 10;
+}
+
+.header-form-add {
+    display: flex;
+    font-size: 1.3em;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.header-form-add .fa-xmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    color: red;
+}
+
+.form-label-add {
+    width: 100%;
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-input-add {
+    width: 100%;
+    padding: 5px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.185);
+    border-radius: 5px;
+}
+
+.form-input-adds {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#fmale,
+#other {
+    margin-left: 30px;
+}
+
+#form-add button {
+    padding: 8px 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+}
+
+#form-add #new {
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    margin-left: 10px;
+}
+
+/* Form sửa */
+#form-change {
+    width: 600px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: fixed;
+    background-color: white;
+    top: 5%;
+    left: 30%;
+    z-index: 10;
+}
+
+.header-form-change {
+    display: flex;
+    font-size: 1.3em;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.header-form-change .fa-xmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    color: red;
+}
+
+.form-data {
+    width: 100%;
+    display: flex;
+}
+
+.form-data-1 {
+    width: 50%;
+    padding-right: 5px;
+}
+
+.form-data-2 {
+    width: 50%;
+    padding-left: 5px;
+}
+
+.form-label-change {
+    width: 100%;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-input-change {
+    width: 100%;
+    padding: 5px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.185);
+    border-radius: 5px;
+}
+
+.form-input-changes {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#fmale-change,
+#other-change {
+    margin-left: 30px;
+}
+
+#form-change button {
+    padding: 8px 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+}
+
+#form-change #save {
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    margin-left: 10px;
+}
+
+/* Bảng sinh viên */
+.header-main {
+    background-color: rgba(169, 169, 169, 0.404);
+    padding: 5px 5px 5px 15px;
+    margin: 0 -15px;
+}
+
+.header-main p {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.header-main-1 {
+    display: flex;
+    justify-content: end;
+    margin: 10px 0;
+}
+
+.btn41-43 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 0.95em;
+    background: transparent;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    background-color: #0081A7;
+    padding: 5px 10px;
+}
+
+.btn-43 {
+    border: 2px solid rgb(255, 255, 255);
+    z-index: 1;
+    color: white;
+}
+
+.btn-43:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+
+.btn-43:hover {
+    color: #0081A7;
+}
+
+.btn-43:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+    border: 1px solid #0081A7;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.search #status-down {
+    padding: 5px 10px;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 10px;
+}
+
+#search {
+    padding: 5px 10px;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
+}
+
+#sum {
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 13.5px;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    table-layout: auto;
+}
+
+table th {
+    background-color: #ff9800;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    letter-spacing: 1px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+table th:nth-child(1) {
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+table tr:hover td {
+    background-color: #ffedcc;
+}
+
+table td {
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+table td:nth-child(1) {
+    text-align: center;
+}
+
+
+#change {
+    padding: 5px;
+    background-color: rgba(229, 205, 173, 0.651);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-left: 7px;
+}
+
+#delete {
+    padding: 5px;
+    background-color: rgb(245, 202, 146);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}

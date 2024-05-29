@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top {
+    background-color: rgba(180, 180, 180, 0.295);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 10px;
+}
+
+.fa-bars {
+    cursor: pointer;
+    font-size: larger;
+}
+
+.fa-circle-user {
+    position: absolute;
+    font-size: 2em;
+    cursor: pointer;
+    right: 10px;
+    color: grey;
+}
+
+/* Phần chính */
+main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: calc(100vh - 50px);
+}
+
+.menu-aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #284e55;
+    padding: 10px 15px 10px 10px;
+}
+
+.menu-aside div {
+    padding: 15px 0;
+}
+
+.menu-aside div a {
+    color: #f1f4f2;
+    text-decoration: none;
+}
+
+.menu-aside div a:hover {
+    transition: box-shadow .3s, color .3s;
+    box-shadow: 0 3px white;
+}
+
+.hide-text {
+    display: none;
+}
+
+/* phần bên phải */
+.main-right {
+    padding: 15px;
+    height: 100%;
+}
+
+.header-main {
+    background-color: rgba(169, 169, 169, 0.404);
+    padding: 5px 5px 5px 15px;
+    margin: 0 -15px;
+}
+
+.header-main p {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+marquee {
+    margin: -15px -15px 0 -15px;
+}
+
+/* Nội dung */
+.task-info {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    width: 100%;
+}
+
+.task-info .block {
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    color: white;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.task-info .block p {
+    padding: 15px;
+}
+
+.task-info .block p span {
+    font-size: 2em;
+    padding-bottom: 5px;
+}
+
+.so-1 {
+    background-color: rgb(101, 201, 2);
+}
+
+.so-1 a {
+    background-color: rgb(71, 141, 2);
+    padding: 5px;
+}
+
+.so-2 {
+    background-color: rgb(223, 223, 22);
+}
+
+.so-2 a {
+    background-color: rgb(145, 145, 11);
+    padding: 5px;
+}
+
+.so-3 {
+    background-color: rgb(252, 84, 84);
+}
+
+.so-3 a {
+    background-color: rgb(197, 77, 77);
+    padding: 5px;
+}
+
+.task-info .block a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.fa-graduation-cap, .fa-layer-group, .fa-users-rays {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 2em;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* Điều hướng menu */
+.task-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-top: 20px;
+}
+
+.box {
+    width: calc(100%/4);
+    padding: 10px;
+    text-align: center;
+}
+
+.box a {
+    text-decoration: none;
+    color: white;
+}
+
+.box:nth-child(1) {
+    background-color: lightseagreen;
+}
+
+.box:nth-child(2) {
+    background-color: limegreen;
+}
+
+.box:nth-child(3) {
+    background-color: orange;
+}
+
+.box:nth-child(4) {
+    background-color: tomato;
+}
+
+/* Phần tin tức */
+.new {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    margin-top: 20px;
+}
+
+.news, .alert {
+    width: calc(50%);
+    border: 1px solid #284e55;
+}
+
+.news p, .alert p {
+    font-size: 1.1em;
+    background-color: lightseagreen;
+    padding: 10px;
+}
+
+.infoma {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.infoma a {
+    text-decoration: none;
+    color: black;
+}
+
+.infoma a:hover {
+    color: blue;
+}

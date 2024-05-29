@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top {
+    background-color: rgba(180, 180, 180, 0.295);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 10px;
+}
+
+.fa-bars {
+    cursor: pointer;
+    font-size: larger;
+}
+
+.fa-circle-user {
+    position: absolute;
+    font-size: 2em;
+    cursor: pointer;
+    right: 10px;
+    color: grey;
+}
+
+/* Phần chính */
+main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: calc(100vh - 50px);
+}
+
+.menu-aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #284e55;
+    padding: 10px 15px 10px 10px;
+}
+
+.menu-aside div {
+    padding: 15px 0;
+}
+
+.menu-aside div a {
+    color: #f1f4f2;
+    text-decoration: none;
+}
+
+.menu-aside div a:hover {
+    transition: box-shadow .3s, color .3s;
+    box-shadow: 0 3px white;
+}
+
+.hide-text {
+    display: none;
+}
+
+/* phần bên phải */
+.main-right {
+    padding: 15px;
+    height: 100%;
+}
+
+.header-main {
+    background-color: rgba(169, 169, 169, 0.404);
+    padding: 5px 5px 5px 15px;
+    margin: 0 -15px;
+}
+
+.header-main p {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* phần bảng điểm */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 13.5px;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    table-layout: auto;
+    margin-top: 20px;
+}
+
+table th {
+    background-color: #ff9800;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    letter-spacing: 1px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+table th:nth-child(1) {
+    text-transform: uppercase;
+}
+
+table th:nth-child(3) {
+    text-align: left;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+table td {
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+table #name {
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.bn3637 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    backface-visibility: hidden;
+    border-radius: 3.5rem;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+
+.bn37 {
+    border-color: transparent;
+    background-color: #fff;
+    color: #000;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+.bn37:hover {
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+/* Thay đổi điểm */
+.form-change {
+    width: 40%;
+    position: fixed;
+    background-color: #fff;
+    top: 10%;
+    left: 30%;
+    border: 1px solid black;
+    padding: 20px;
+    z-index: 100;
+}
+
+.form-change h1 {
+    margin: 10px -10px 20px -10px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(1, 75, 1);
+    color: white;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.info div {
+    width: calc(50%);
+}
+
+.form-label-info {
+    font-size: 1.3em;
+}
+
+.form-input-info {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.term {
+    margin-top: 20px;
+}
+
+.term p {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.term .terms {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.term .terms div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input {
+    margin-top: 8px;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#save {
+    cursor: pointer;
+    margin-left: calc(70%);
+}
+
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+#cancel {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.button-8 {
+    background-color: #e1ecf4;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #39739d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+    background-color: #b3d3ea;
+    color: #2c5777;
+}
+
+.button-8:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+    background-color: #a0c7e4;
+    box-shadow: none;
+    color: #2c5777;
+}
+
+#cover {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    z-index: 9;
+    opacity: 0.5;
+}
+
+/* cảnh báo */
+.init-alert {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    z-index: 100;
+}
+
+.close-fixed-alert {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    font-size: 1.2em;
+}
+
+.fixed-alert {
+    width: 300px;
+    position: fixed;
+    z-index: 999999999;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.alert-right-content {
+    padding: 10px;
+}
+
+.alert-right-content p {
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.fa-circle-xmark {
+    color: red;
+    margin-right: 5px;
+}
+
+.fa-circle-check {
+    color: green;
+    margin-right: 5px;
+}
+
+/* tìm kiếm */
+.search {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.search #status-down {
+    padding: 5px 10px;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 10px;
+}
+
+#search {
+    padding: 5px 10px;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
+}
