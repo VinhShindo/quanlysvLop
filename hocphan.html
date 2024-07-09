@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học phần</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="hocphan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-circle-user"></i>
+    </div>
+    <main>
+        <div class="menu-aside" id="menu-aside">
+            <div><a href="trangchu.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> <span
+                        class="hide-text">Trang chủ</span></a></div>
+            <div><a href="quanly.html" onclick="toggleMenu()"><i class="fa-solid fa-user"></i> <span
+                        class="hide-text">Quản lý sinh viên</span></a></div>
+            <div><a href="quanlydiem.html" onclick="toggleMenu()"><i class="fa-solid fa-window-restore"></i> <span
+                        class="hide-text">Quản lý điểm</span></a></div>
+            <div><a href="hocphan.html" onclick="toggleMenu()"><i class="fa-solid fa-book"></i> <span
+                        class="hide-text">Học
+                        phần</span></a></div>
+            <div><a href="tintuc.html" onclick="toggleMenu()"><i class="fa-solid fa-newspaper"></i> <span
+                        class="hide-text">Tin
+                        tức</span></a></div>
+            <div><a href="baocao.html" onclick="toggleMenu()"><i class="fa-regular fa-comment-dots"></i> <span
+                        class="hide-text">Báo cáo, góp ý</span></a></div>
+        </div>
+        <div class="main-right">
+            <div class="header-main">
+                <p><i class="fa-solid fa-book"></i> Học phần</p>
+            </div>
+            <table>
+                <tr>
+                    <th>Kỳ thứ</th>
+                    <th>Tên học phần</th>
+                    <th>Số tín chỉ</th>
+                    <th>Tổng số tiết</th>
+                </tr>
+                <tbody id="list">
+
+                </tbody>
+            </table>
+        </div>
+        <script>
+            var soureAPI = 'http://localhost:3000/Subject';
+
+            function getMember() {
+                fetch(soureAPI)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        var num = 0;
+                        var htmls = data.map(function (list, index) {
+                            var rowspanAttr = index % 4 === 0 ? 'rowspan="4"' : 'hidden';
+                            if (index % 4 === 0) {
+                                num += 1;
+                            }
+                            return `
+                                <tr>
+                                    <td id="rong" ${rowspanAttr}>${num}</td>
+                                    <td>${list.name}</td>
+                                    <td>${list.numberCredits}</td>
+                                    <td>${list.numberCredits * 15}</td>
+                                </tr>
+                            `;
+                        });
+                        document.getElementById('list').innerHTML = htmls.join('');
+                    });
+            }
+
+            getMember();
+
+            $(document).ready(function () {
+                $(".fa-bars").click(function () {
+                    $("span.hide-text").toggle("slow")
+                });
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .top {
+            background-color: rgba(180, 180, 180, 0.295);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 15px 10px;
+        }
+
+        .fa-bars {
+            cursor: pointer;
+            font-size: larger;
+        }
+
+        .fa-circle-user {
+            position: absolute;
+            font-size: 2em;
+            cursor: pointer;
+            right: 10px;
+            color: grey;
+        }
+
+        /* Phần chính */
+        main {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            height: calc(100vh - 50px);
+        }
+
+        .menu-aside {
+            display: flex;
+            flex-direction: column;
+            background-color: #284e55;
+            padding: 10px 15px 10px 10px;
+        }
+
+        .menu-aside div {
+            padding: 15px 0;
+        }
+
+        .menu-aside div a {
+            color: #f1f4f2;
+            text-decoration: none;
+        }
+
+        .menu-aside div a:hover {
+            transition: box-shadow .3s, color .3s;
+            box-shadow: 0 3px white;
+        }
+
+        .hide-text {
+            display: none;
+        }
+
+        /* phần bên phải */
+        .main-right {
+            padding: 15px;
+            height: 100%;
+        }
+
+        .header-main {
+            background-color: rgba(169, 169, 169, 0.404);
+            padding: 5px 5px 5px 15px;
+            margin: 0 -15px;
+        }
+
+        .header-main p {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .box {
+            display: flex;
+            column-gap: 20px;
+            padding: 20px;
+        }
+
+        .box h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            border-bottom: 1px solid black;
+            padding-bottom: 10px;
+        }
+
+        .news, .alert, .schedule{
+            width: calc(100%/3);
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news {
+            border-top: 5px solid rgb(117, 98, 0);
+        }
+
+        .alert {
+            border-top: 5px solid rgb(1, 94, 1);
+        }
+
+        .schedule {
+            border-top: 5px solid rgb(121, 26, 26);
+        }
+
+        .box a {
+            text-decoration: none;
+            color: black;
+            margin-top: 5px;
+        }
+
+        .box a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-circle-user"></i>
+    </div>
+    <main>
+        <div class="menu-aside" id="menu-aside">
+            <div><a href="trangchu.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> <span
+                        class="hide-text">Trang chủ</span></a></div>
+            <div><a href="quanly.html" onclick="toggleMenu()"><i class="fa-solid fa-user"></i> <span
+                        class="hide-text">Quản lý sinh viên</span></a></div>
+            <div><a href="quanlydiem.html" onclick="toggleMenu()"><i class="fa-solid fa-window-restore"></i> <span
+                        class="hide-text">Quản lý điểm</span></a></div>
+            <div><a href="hocphan.html" onclick="toggleMenu()"><i class="fa-solid fa-book"></i> <span
+                        class="hide-text">Học
+                        phần</span></a></div>
+            <div><a href="tintuc.html" onclick="toggleMenu()"><i class="fa-solid fa-newspaper"></i> <span
+                        class="hide-text">Tin
+                        tức</span></a></div>
+            <div><a href="baocao.html" onclick="toggleMenu()"><i class="fa-regular fa-comment-dots"></i> <span
+                        class="hide-text">Báo cáo, góp ý</span></a></div>
+        </div>
+        <div class="main-right">
+            <div class="header-main">
+                <p><i class="fa-solid fa-newspaper"></i> Tin tức</p>
+            </div>
+            <div class="box">
+                <div class="news">
+                    <h3><i class="fa-solid fa-briefcase"></i> Sự Kiện</h3>
+                    <a href="tintuc.html">Hướng dẫn V/v: Nộp tiền bảo hiểm ý tế</a>
+                    <a href="tintuc.html">Thông báo V/v: Hoàn thành giấy tờ nhập học</a>
+                    <a href="tintuc.html">Công văn Về việc Vận động hiến máu nhân đạo năm 2023</a>
+                    <a href="tintuc.html">Công văn đến V/v: Tổ chức Cuộc thi "Tiếng hát sinh viên toàn quốc lần thứ XV - 2023"</a>
+                 </div>
+                 <div class="alert">
+                    <h3><i class="fa-solid fa-bell"></i> Thông báo</h3>
+                    <a href="tintuc.html">Thông báo V/v: Khảo sát mức độ hài lòng của sinh viên trường Đại học Đại Nam</a>
+                    <a href="tintuc.html">Thông báo V/v: Tổ chức thi kết thúc học phần lần 1 khóa 17 học kỳ III năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Nộp học phí học kỳ III năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Ban hành thời khóa biểu trình độ đại học chính khóa 17 học kỳ III năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Tổ chức thi kết thúc học phần lần 1 khóa 17 học kỳ II năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Nộp học phí học kỳ II năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Ban hành thời khóa biểu trình độ đại học chính khóa 17 học kỳ II năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Tổ chức cho sinh viên khóa 17 thi kết thúc học phần lần 1, học kỳ I năm học 2023-2024</a>                        <a href="tintuc.html">Thông báo V/v: Nộp học phí học kỳ I năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Ban hành thời khóa biểu trình độ đại học chính khóa 17 học kỳ I năm học 2023-2024</a>
+                    <a href="tintuc.html">Thông báo V/v: Tham gia BHYT bắt buộc đối với sinh viên năm học 2023-2024</a>
+                 </div>
+                 <div class="schedule">
+                    <h3><i class="fa-solid fa-calendar-days"></i> Lịch học và thi</h3>
+                    <a href="">TB: Lịch học bù tiếng anh phòng 30/5/2024</a>
+                    <a href="">TB: Lịch học bù CTDL & DT ngày 24/5/2024</a>
+                    <a href="">TB: Lịch học bù CTDL & DT ngày 17/5/2024</a>
+                    <a href="">TB: Lịch học bù CTDL & DT ngày 10/5/2024</a>
+                 </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(".fa-bars").click(function () {
+                    $("span.hide-text").toggle("slow")
+                });
+            });
+        </script>
+</body>
+
+</html>

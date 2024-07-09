@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo góp ý</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .top {
+            background-color: rgba(180, 180, 180, 0.295);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 15px 10px;
+        }
+
+        .fa-bars {
+            cursor: pointer;
+            font-size: larger;
+        }
+
+        .fa-circle-user {
+            position: absolute;
+            font-size: 2em;
+            cursor: pointer;
+            right: 10px;
+            color: grey;
+        }
+
+        /* Phần chính */
+        main {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            height: calc(100vh - 50px);
+        }
+
+        .menu-aside {
+            display: flex;
+            flex-direction: column;
+            background-color: #284e55;
+            padding: 10px 15px 10px 10px;
+        }
+
+        .menu-aside div {
+            padding: 15px 0;
+        }
+
+        .menu-aside div a {
+            color: #f1f4f2;
+            text-decoration: none;
+        }
+
+        .menu-aside div a:hover {
+            transition: box-shadow .3s, color .3s;
+            box-shadow: 0 3px white;
+        }
+
+        .hide-text {
+            display: none;
+        }
+
+        /* phần bên phải */
+        .main-right {
+            padding: 15px;
+            height: 100%;
+        }
+
+        .header-main {
+            background-color: rgba(169, 169, 169, 0.404);
+            padding: 5px 5px 5px 15px;
+            margin: 0 -15px;
+        }
+
+        .header-main p {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        /* form góp ý */
+        .box {
+            display: flex;
+            width: 75%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-box {
+            background-color: rgb(80, 182, 80);
+            height: 100%;
+            width: 40%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        .left-box h2 {
+            font-size: 2em;
+        }
+
+        .left-box p {
+            font-size: 1.2em;
+            margin-top: 40px;
+        }
+
+        .left-box i {
+            margin-right: 15px;
+            padding: 5px;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+
+        .right-box {
+            width: 60%;
+        }
+
+        .container {
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+            margin-top: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #close {
+            background-color: green;
+        }
+
+        #close:hover {
+            background-color: rgb(0, 129, 0);
+        }
+
+        .tb {
+            width: 400px;
+            position: fixed;
+            display: none;
+            top: 40%;
+            left: 40%;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+
+        .tb .fa-circle-check {
+            font-size: 3.5em;
+            color: green;
+            margin-bottom: 40px;
+        }
+
+        .tb p {
+            margin-bottom: 20px;
+        }
+
+        .dark-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+        }
+
+        .init-alert {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            z-index: 10000;
+        }
+
+        .close-fixed-alert {
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            width: 30px;
+            font-size: 1.2em;
+        }
+
+        .fixed-alert {
+            width: 300px;
+            position: fixed;
+            z-index: 999999999;
+            top: 20px;
+            right: 20px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .alert-right-content {
+            padding: 10px;
+        }
+
+        .alert-right-content p {
+            font-size: large;
+            margin-bottom: 5px;
+        }
+
+        .fa-circle-xmark {
+            color: red;
+            margin-right: 5px;
+        }
+
+        .fa-circle-check {
+            color: green;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-circle-user"></i>
+    </div>
+    <main>
+        <div class="menu-aside" id="menu-aside">
+            <div><a href="trangchu.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> <span
+                        class="hide-text">Trang chủ</span></a></div>
+            <div><a href="quanly.html" onclick="toggleMenu()"><i class="fa-solid fa-user"></i> <span
+                        class="hide-text">Quản lý sinh viên</span></a></div>
+            <div><a href="quanlydiem.html" onclick="toggleMenu()"><i class="fa-solid fa-window-restore"></i> <span
+                        class="hide-text">Quản lý điểm</span></a></div>
+            <div><a href="hocphan.html" onclick="toggleMenu()"><i class="fa-solid fa-book"></i> <span
+                        class="hide-text">Học
+                        phần</span></a></div>
+            <div><a href="tintuc.html" onclick="toggleMenu()"><i class="fa-solid fa-newspaper"></i> <span
+                        class="hide-text">Tin
+                        tức</span></a></div>
+            <div><a href="baocao.html" onclick="toggleMenu()"><i class="fa-regular fa-comment-dots"></i> <span
+                        class="hide-text">Báo cáo, góp ý</span></a></div>
+        </div>
+        <div class="main-right">
+            <div class="header-main">
+                <p><i class="fa-regular fa-comment-dots"></i> Báo cáo, góp ý</p>
+            </div>
+            <div class="box">
+                <div class="left-box">
+                    <h2>Tiếp nhận góp ý</h2>
+                    <p>Luôn sẵn sàng tiếp nhận mọi góp ý của phụ huynh và học sinh</p>
+                    <p><i class="fa-solid fa-phone"></i> Phone: 0909177411</p>
+                    <p><i class="fa-solid fa-envelope"></i> Email: hotrotructuyen@gmail.com</p>
+                    <p><i class="fa-solid fa-globe"></i> Website: www.hotrothacmac.vn</p>
+                </div>
+                <div class="right-box">
+                    <div class="container">
+                        <h1>Form góp ý</h1>
+                        <div class="form">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="feedback">Nội dung góp ý</label>
+                            <textarea id="feedback" name="feedback" rows="5" required></textarea>
+
+                            <button type="submit" id="submit">Gửi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="tb">
+        <i class="fa-solid fa-circle-check"></i>
+        <p>Góp ý đã được ghi nhận, xin cảm ơn và mong nhận được thêm nhiều góp ý</p>
+        <button id="close">Xong</button>
+    </div>
+    <div class="dark-overlay"></div>
+    <script>
+        document.getElementById('submit').onclick = () => {
+            if (document.getElementById('name').value.trim() == '') {
+                pushAlert('<i class="fa-solid fa-circle-xmark"></i>', 'Cảnh báo', 'Họ tên không đươc để trông', 5000);
+                return;
+            }
+            if (document.getElementById('email').value.trim() == '') {
+                pushAlert('<i class="fa-solid fa-circle-xmark"></i>', 'Cảnh báo', 'Email không đươc để trông', 5000);
+                return;
+            }
+            if (document.getElementById('feedback').value.trim() == '') {
+                pushAlert('<i class="fa-solid fa-circle-xmark"></i>', 'Cảnh báo', 'Feedback không đươc để trông', 5000);
+                return;
+            }
+            $(".tb").fadeIn(300);
+            $(".dark-overlay").fadeIn(300);
+        }
+        $(document).ready(function () {
+            $(".fa-bars").click(function () {
+                $("span.hide-text").toggle("slow")
+            });
+            $("#close").click(function () {
+                $(".tb").fadeOut(300);
+                $(".dark-overlay").fadeOut(300);
+                $("#name").val("");
+                $("#email").val("");
+                $("#feedback").val("");
+            });
+        });
+        function pushAlert(i, text, mess, time) {
+            $('body').append(
+                `<div class="animate__animated animate__bounceInLeft alert alert-info init-alert alert-dismissible m-b-0 fixed-alert">
+                <button type="button" class="close close-fixed-alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+                </button>
+                <div class="alert-right-content">
+                    <p>${i} ${text}</p>
+                    ${mess}
+                </div>
+            </div>`
+            );
+            setTimeout(function () {
+                $('.fixed-alert').removeClass('animate__bounceInLeft').addClass('animate__bounceOutLeft');
+                $('.fixed-alert').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $(this).remove();
+                });
+            }, time);
+            $('.close-fixed-alert').click(function () {
+                $('.fixed-alert').removeClass('animate__bounceInLeft').addClass('animate__bounceOutLeft');
+                $('.fixed-alert').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $(this).remove();
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

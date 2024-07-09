@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+    <link rel="stylesheet" href="quanlydiem.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="top">
+        <!-- <marquee behavior="" direction="">Chào mừng thầy, cô đến với cổng quản lý sinh viên</marquee> -->
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-circle-user"></i>
+    </div>
+    <main>
+        <div class="menu-aside" id="menu-aside">
+            <div><a href="trangchu.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> <span
+                        class="hide-text">Trang chủ</span></a></div>
+            <div><a href="quanly.html" onclick="toggleMenu()"><i class="fa-solid fa-user"></i> <span
+                        class="hide-text">Quản lý sinh viên</span></a></div>
+            <div><a href="quanlydiem.html" onclick="toggleMenu()"><i class="fa-solid fa-window-restore"></i> <span
+                        class="hide-text">Quản lý điểm</span></a></div>
+            <div><a href="hocphan.html" onclick="toggleMenu()"><i class="fa-solid fa-book"></i> <span
+                        class="hide-text">Học
+                        phần</span></a></div>
+            <div><a href="tintuc.html" onclick="toggleMenu()"><i class="fa-solid fa-newspaper"></i> <span
+                        class="hide-text">Tin
+                        tức</span></a></div>
+            <div><a href="baocao.html" onclick="toggleMenu()"><i class="fa-regular fa-comment-dots"></i> <span
+                        class="hide-text">Báo cáo, góp ý</span></a></div>
+        </div>
+        <div class="main-right">
+            <div class="header-main">
+                <p><i class="fa-solid fa-window-restore"></i> Quản lý điểm thi</p>
+            </div>
+            <div class="form-change" hidden>
+                <h1>Thay đổi điểm</h1>
+                <div class="info">
+                    <div>
+                        <label for="msv-input" class="form-label-info">Mã sinh viên</label> <br>
+                        <input type="text" class="form-input-info" id="msv-input">
+                    </div>
+                    <div>
+                        <label for="name-input" class="form-label-info">Họ và tên</label> <br>
+                        <input type="text" class="form-input-info" id="name-input">
+                    </div>
+                </div>
+                <div class="term">
+                    <p id="nameSubject-1"></p>
+                    <div class="terms">
+                        <div>
+                            <label for="sub-1-1" class="form-label">Điểm CC</label> 
+                            <input type="text" class="form-input" id="sub-1-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT1</label> 
+                            <input type="text" class="form-input" id="sub-1-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT2</label> 
+                            <input type="text" class="form-input" id="sub-1-3">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm CK</label> 
+                            <input type="text" class="form-input" id="sub-1-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="term">
+                    <p id="nameSubject-2"></p>
+                    <div class="terms">
+                        <div>
+                            <label for="" class="form-label">Điểm CC</label> 
+                            <input type="text" class="form-input" id="sub-2-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT1</label> 
+                            <input type="text" class="form-input" id="sub-2-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT2</label> 
+                            <input type="text" class="form-input" id="sub-2-3">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm CK</label> 
+                            <input type="text" class="form-input" id="sub-2-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="term">
+                    <p id="nameSubject-3"></p>
+                    <div class="terms">
+                        <div>
+                            <label for="" class="form-label">Điểm CC</label> 
+                            <input type="text" class="form-input" id="sub-3-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT1</label> 
+                            <input type="text" class="form-input" id="sub-3-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT2</label> 
+                            <input type="text" class="form-input" id="sub-3-3">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm CK</label> 
+                            <input type="text" class="form-input" id="sub-3-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="term">
+                    <p id="nameSubject-4"></p>
+                    <div class="terms">
+                        <div>
+                            <label for="" class="form-label">Điểm CC</label> 
+                            <input type="text" class="form-input" id="sub-4-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT1</label> 
+                            <input type="text" class="form-input" id="sub-4-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT2</label> 
+                            <input type="text" class="form-input" id="sub-4-3">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm CK</label> 
+                            <input type="text" class="form-input" id="sub-4-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button id="save" class="button-3">Lưu lại</button>
+                    <button id="cancel" class="button-8">Hủy</button>
+                </div>
+            </div>
+            <div class="change-point" hidden>
+                <h1>Thay đổi điểm</h1>
+                <div class="info">
+                    <div>
+                        <label for="msv-input" class="form-label-info">Mã sinh viên</label> <br>
+                        <input type="text" class="form-input-info" id="msv-input-1">
+                    </div>
+                    <div>
+                        <label for="name-input" class="form-label-info">Họ và tên</label> <br>
+                        <input type="text" class="form-input-info" id="name-input-1">
+                    </div>
+                </div>
+                <div class="term">
+                    <p id="nameSubject"></p>
+                    <div class="terms">
+                        <div>
+                            <label for="sub-1" class="form-label">Điểm CC</label> 
+                            <input type="text" class="form-input" id="sub-1">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT1</label> 
+                            <input type="text" class="form-input" id="sub-2">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm KT2</label> 
+                            <input type="text" class="form-input" id="sub-3">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">Điểm CK</label> 
+                            <input type="text" class="form-input" id="sub-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button id="saveS" class="button-3">Lưu lại</button>
+                    <button id="cancelS" class="button-8">Hủy</button>
+                </div>
+            </div>
+            <div class="search">
+                <span>
+                    <select name="options" id="status-downs" onchange="selectSubject()">
+                        <option value="all">--Chọn môn học--</option>
+                        <div id="Subject"></div>
+                    </select>
+                </span>
+                <span>
+                    <select name="options" id="status-down" onchange="start()">
+                        <!-- <option value="Tất cả" selected>Tất cả</option> -->
+                        <option value="0" selected>Kì 1</option>
+                        <option value="1">Kì 2</option>
+                        <option value="2">Kì 3</option>
+                    </select>
+                </span>
+                <input type="search" name="" id="search" oninput="searchUser()" placeholder="Nhập tên cần tìm...">
+            </div>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã sinh viên</th>
+                    <th>Họ và tên</th>
+                    <th>Tên học phần</th>
+                    <th>Điểm CC</th>
+                    <th>Điểm KT1</th>
+                    <th>Điểm KT2</th>
+                    <th>Điểm CK</th>
+                    <th>Điểm TB</th>
+                    <th>Xếp loại</th>
+                    <th>Chức năng</th>
+                </tr>
+                <tbody id="groups">
+    
+                </tbody>
+            </table>
+        </div>
+        <div id="cover"></div>
+    <script src="quanlydiem.js"></script>
+</body>
+</html>

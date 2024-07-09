@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top {
+    background-color: rgba(180, 180, 180, 0.295);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 10px;
+}
+
+.fa-bars {
+    cursor: pointer;
+    font-size: larger;
+}
+
+.fa-circle-user {
+    position: absolute;
+    font-size: 2em;
+    cursor: pointer;
+    right: 10px;
+    color: grey;
+}
+
+/* Phần chính */
+main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: calc(100vh - 50px);
+}
+
+.menu-aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #284e55;
+    padding: 10px 15px 10px 10px;
+}
+
+.menu-aside div {
+    padding: 15px 0;
+}
+
+.menu-aside div a {
+    color: #f1f4f2;
+    text-decoration: none;
+}
+
+.menu-aside div a:hover {
+    transition: box-shadow .3s, color .3s;
+    box-shadow: 0 3px white;
+}
+
+.hide-text {
+    display: none;
+}
+
+/* phần bên phải */
+.main-right {
+    padding: 15px;
+    height: 100%;
+}
+
+.header-main {
+    background-color: rgba(169, 169, 169, 0.404);
+    padding: 5px 5px 5px 15px;
+    margin: 0 -15px;
+}
+
+.header-main p {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Bảng table */
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #ff9800;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(odd) td {
+    background-color: #d3d3d3;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+#rong {
+    background-color: #f1f1f1;
+}
